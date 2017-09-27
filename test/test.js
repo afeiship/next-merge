@@ -4,7 +4,7 @@ require('../src/next-merge');
 
 describe('next/merge', function () {
 
-  it('nx.mix', function () {
+  it('nx.merge', function () {
     var users = {
       'data': [{ 'user': 'barney' }, { 'user': 'fred' }]
     };
@@ -14,6 +14,10 @@ describe('next/merge', function () {
     };
 
     var res = nx.merge({},users, ages);
+
+    assert.equal(res.data.length,2);
+    assert.equal(res.data[0].user,'barney');
+    assert.equal(res.data[0].age,'36');
 
   });
 
