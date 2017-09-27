@@ -13,10 +13,7 @@ describe('next/merge', function () {
       'data': [{ 'age': 36 }, { 'age': 40 }]
     };
 
-
-    var res = nx.merge(users, ages);
-
-    console.log(res);
+    var res = nx.merge({},users, ages);
 
   });
 
