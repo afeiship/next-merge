@@ -3,6 +3,4 @@
 
 
 ## resources:
-
-## todos:
-- [ ] unit test case
++ https://stackoverflow.com/questions/171251/how-can-i-merge-properties-of-two-javascript-objects-dynamically
