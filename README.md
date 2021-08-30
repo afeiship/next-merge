@@ -15,7 +15,20 @@ npm install -S @jswork/next-merge
 ```js
 import '@jswork/next-merge';
 
-//DOCS here!
+const object = {
+  'a': [{ 'b': 2 }, { 'd': 4 }]
+};
+ 
+const other = {
+  'a': [{ 'c': 3 }, { 'e': 5 }]
+};
+ 
+const res = nx.merge(object, other);
+conosle.log(res);
+conosle.log(res === object);
+
+// { a: [ { b: 2, c: 3 }, { d: 4, e: 5 } ] }
+// true
 ```
 
 ## license
