@@ -4,6 +4,7 @@
   var OBJECT = 'object';
   var UNDEFINED = 'undefined';
 
+  // https://stackoverflow.com/questions/171251/how-can-i-merge-properties-of-two-javascript-objects-dynamically
   // merge does the actual job with two arguments.
   var merge = function (dst, src) {
     if (typeof src.nodeType !== UNDEFINED || typeof src !== OBJECT || src === null) {
