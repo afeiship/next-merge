@@ -1,19 +1,17 @@
 (function () {
-
-  var global = global || this || self || window;
-  var nx = global.nx || require('next-js-core2');
-  var ARRAY_PROTO = Array.prototype;
+  var global = typeof window !== 'undefined' ? window : this || Function('return this')();
+  var nx = global.nx || require('@jswork/next');
   var OBJECT = 'object';
   var UNDEFINED = 'undefined';
 
   // merge does the actual job with two arguments.
   var merge = function (dst, src) {
-    if (typeof src.nodeType!== UNDEFINED || typeof src !== OBJECT || src === null) {
+    if (typeof src.nodeType !== UNDEFINED || typeof src !== OBJECT || src === null) {
       return dst;
     }
 
     for (var p in src) {
-      if (!src.hasOwnProperty(p) || src[p] === undefined){
+      if (!src.hasOwnProperty(p) || src[p] === undefined) {
         continue;
       }
       if (typeof src[p] !== OBJECT || src[p] === null) {
@@ -30,9 +28,7 @@
   nx.merge = function () {
     // Loop through arguments and merge them into the first argument.
     var target = arguments[0];
-    if (typeof target !== OBJECT || target === null){
-      return target;
-    }
+    if (typeof target !== OBJECT || target === null) return target;
     for (var i = 1, length = arguments.length; i < length; i++) {
       merge(target, arguments[i]);
     }
@@ -42,5 +38,4 @@
   if (typeof module !== 'undefined' && module.exports) {
     module.exports = nx.merge;
   }
-
-}());
+})();
